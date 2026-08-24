@@ -7,11 +7,12 @@ const FONT_DISPLAY = "'Fraunces', serif";
 const FONT_BODY = "'Manrope', sans-serif";
 
 const categoryOptions = [
-  { value: "marriage", label: "Marriage" },
-  { value: "puja", label: "Puja" },
-  { value: "birthday", label: "Birthday" },
+  { value: "marriage",  label: "Marriage"  },
+  { value: "puja",      label: "Puja"      },
+  { value: "birthday",  label: "Birthday"  },
   { value: "reception", label: "Reception" },
   { value: "corporate", label: "Corporate" },
+  { value:"festival",   label:"Festival"   }
 ];
 
 const inputClass =
