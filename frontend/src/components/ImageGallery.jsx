@@ -25,7 +25,7 @@ const ImageGallery = ({ images, title }) => {
           <img
             key={index}
             src={img}
-            alt=""
+            alt={`${title} decoration`}
             onClick={() => setSelectedImage(img)}
             className={`h-24 w-24 cursor-pointer rounded-xl object-cover border-4 transition ${
                selectedImage === img

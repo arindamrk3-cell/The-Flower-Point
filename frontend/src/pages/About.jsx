@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
 import GarlandDivider from "../components/GarlandDivider";
 
 const FONT_DISPLAY = "'Fraunces', serif";
@@ -42,6 +43,20 @@ const process = [
 ];
 
 const About = () => {
+  useEffect(() => {
+    document.title = "About The Flower Point | Flower Decoration in Kolkata";
+
+    const description = document.querySelector(
+      'meta[name="description"]'
+    );
+
+    if (description) {
+      description.setAttribute(
+        "content",
+        "Learn about The Flower Point, a flower and event decoration service in Kolkata specializing in wedding, marriage, puja, birthday and reception decorations."
+      );
+    }
+  }, []);
   return (
     <div style={{ fontFamily: FONT_BODY }}>
       {/* Intro */}

@@ -30,6 +30,59 @@ const CategoryPage = () => {
     
   },[category]);
 
+useEffect(() => {
+  const seoData = {
+    marriage: {
+      title: "Wedding & Marriage Flower Decoration | The Flower Point",
+      description:
+        "Explore beautiful wedding and marriage flower decoration designs by The Flower Point. Discover floral stage, mandap and venue decoration ideas for your special day."
+    },
+
+    puja: {
+      title: "Puja Flower Decoration | The Flower Point",
+      description:
+        "Explore beautiful puja flower decoration designs by The Flower Point. Discover traditional floral decoration ideas for puja and religious events."
+    },
+
+    birthday: {
+      title: "Birthday Flower Decoration | The Flower Point",
+      description:
+        "Explore beautiful birthday flower and event decoration designs by The Flower Point. Find creative decoration ideas for birthday celebrations."
+    },
+
+    reception: {
+      title: "Reception Flower Decoration | The Flower Point",
+      description:
+        "Explore elegant reception flower decoration designs by The Flower Point. Discover beautiful floral stage and venue decoration ideas."
+    },
+
+    corporate: {
+      title: "Corporate Event Decoration | The Flower Point",
+      description:
+        "Explore professional floral decoration designs for corporate events by The Flower Point. Create an elegant and welcoming event environment."
+    }
+  };
+
+  const currentSEO = seoData[category?.toLowerCase()];
+
+  if (currentSEO) {
+    document.title = currentSEO.title;
+
+    const description = document.querySelector(
+      'meta[name="description"]'
+    );
+
+    if (description) {
+      description.setAttribute(
+        "content",
+        currentSEO.description
+      );
+    }
+  }
+}, [category]);
+
+
+
 
   const filteredDesigns = designs.filter(
     design => design.category === category

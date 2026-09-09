@@ -28,6 +28,23 @@ const Gallery = () => {
     fetchDesigns();
   },[]);
 
+useEffect(() => {
+  document.title =
+    "Flower Decoration Gallery | The Flower Point";
+
+  const description = document.querySelector(
+    'meta[name="description"]'
+  );
+
+  if (description) {
+    description.setAttribute(
+      "content",
+      "Explore The Flower Point's collection of wedding, marriage, puja, birthday, reception and corporate flower decoration designs."
+    );
+  }
+}, []);
+
+
   const filteredDesigns = useMemo(() => {
     return designs.filter((design) => {
       const matchCategory =

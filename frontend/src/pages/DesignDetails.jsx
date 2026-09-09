@@ -70,6 +70,29 @@ const DesignDetails = () => {
     fetchDesign();
   }, [id]);
 
+useEffect(() => {
+  if (!design) return;
+
+  const categoryName =
+    design.category?.charAt(0).toUpperCase() +
+    design.category?.slice(1);
+
+  document.title =
+    `${design.title} | ${categoryName} Decoration | The Flower Point`;
+
+  const description = document.querySelector(
+    'meta[name="description"]'
+  );
+
+  if (description) {
+    description.setAttribute(
+      "content",
+      `${design.shortDescription || design.description} Explore this ${categoryName?.toLowerCase()} decoration design by The Flower Point.`
+    );
+  }
+}, [design]);
+
+
   if (loading) {
     return (
       <section
